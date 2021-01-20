@@ -6,7 +6,7 @@ RUN \
 ENV GO111MODULE on
 
 #RUN go get -u -v github.com/openshift/oc/cmd/oc 6f8f260853ad23a1edeb7ee622da764e6b711e37
-RUN git clone https://github.com/openshift/oc
+RUN git clone --depth 1 https://github.com/openshift/oc
 RUN cd oc && make "WHAT=cmd/oc"
 
 
