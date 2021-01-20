@@ -12,7 +12,7 @@ RUN cd oc && make "WHAT=cmd/oc"
 
 FROM registry.centos.org/centos/centos:8
 
-COPY --from=builder /root/oc/oc /bin/
+COPY --from=builder /oc/oc /bin/
 # TODO copy contrib/completions/bash/oc
 
 RUN \
