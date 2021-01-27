@@ -12,9 +12,11 @@ RUN cd oc && make "WHAT=cmd/oc"
 
 FROM registry.centos.org/centos/centos:8
 
+COPY google-cloud-sdk.repo /etc/yum.repos.d/google-cloud-sdk.repo
+
 COPY --from=builder /oc/oc /bin/
 # TODO copy contrib/completions/bash/oc
 
 RUN \
-    dnf install -y git podman && \
+    dnf install -y git podman google-cloud-sdk && \
     dnf clean all
