@@ -10,7 +10,7 @@ RUN git clone --depth 1 https://github.com/openshift/oc
 RUN cd oc && make "WHAT=cmd/oc"
 
 
-FROM registry.centos.org/centos/centos:8
+FROM quay.io/slukasik/falcon-demo
 
 COPY google-cloud-sdk.repo /etc/yum.repos.d/google-cloud-sdk.repo
 
